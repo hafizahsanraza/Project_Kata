@@ -1,0 +1,14 @@
+version: '3'
+services:
+  kata-service:
+    image: kata-service:v1.0
+    ports:
+      - '8080:80'
+  
+  kata-ui:
+    image: kata-ui:v1.0
+    ports:
+      - '8081:3000'
+    
+    depends_on:
+      - kata-service
